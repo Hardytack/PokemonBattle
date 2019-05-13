@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>A Pokemon Fight!</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Pokemon Battle!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(basic)">Basic</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(beach)">Beach</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(bridge)">Bridge</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(cave1)">Cave 1</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(cave2)">Cave 2</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(city)">City</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(field)">Field</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(forest)">Forest</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(lava)">Lava</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(ocean)">Ocean</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(online)">Online</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(path)">Path</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(plaza)">Plaza</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(redCarpet)">Red Carpet</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(snow)">Snow</a>
+              <a class="dropdown-item bgoption" href="#" onclick="changeBG(space)">Space</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item bgoption" href="#" onclick="randomBG()">Random</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <div id="ChooseButtons">
+  <p>Choose your Pokemon, Player <span id="whoChooses">One!</span></p>
+    <button id="pickBulb" class="chooseButton grass hoverPick" onclick="pickPokemon(Tangela)"><span id="tangela">I choose Tangela!</span></button>
+    <button id="pickRat" onclick="pickPokemon(Rattata)" class="chooseButton normal hoverPick"><span id="rattata">I choose Rattata!</span></button>
+    <button id="pickSlugma" onclick="pickPokemon(Slugma)" class="chooseButton fire hoverPick"><span id="slugma">I choose Slugma!</span></button>
+    <button id="pickBuizel" onclick="pickPokemon(Buizel)" class="chooseButton water hoverPick"><span id="buizel">I choose Buizel!</span></button>
+    <button id="pickBagon" onclick="pickPokemon(Bagon)" class="chooseButton dragon hoverPick"><span id="bagon">I choose Bagon!</span></button>
+    <button id="pickPachirisu" onclick="pickPokemon(Pachirisu)" class="chooseButton electric hoverPick"><span id="pachirisu">I choose Pachirisu!</span></button>
+    <button id="pickDrilbur" onclick="pickPokemon(Drilbur)" class="chooseButton ground hoverPick"><span id="drilbur">I choose Drilbur!</span></button>
+	<button id="pickKlink" onclick="pickPokemon(Klink)" class="chooseButton steel hoverPick"><span id="klink">I choose Klink!</span></button>
+	<button id="pickPoochyena" onclick="pickPokemon(Poochyena)" class="chooseButton dark hoverPick"><span id="poochyena">I choose Poochyena!</span></button>
+	<button id="pickMakuhita" onclick="pickPokemon(Makuhita)" class="chooseButton fighting hoverPick"><span id="makuhita">I choose Makuhita!</span></button>
+	<button id="pickRoggenrola" onclick="pickPokemon(Roggenrola)" class="chooseButton rock hoverPick"><span id="roggenrola">I choose Roggenrola!</span></button>
+	<button id="pickSnorunt" onclick="pickPokemon(Snorunt)" class="chooseButton ice hoverPick"><span id="snorunt">I choose Snorunt!</span></button>
+	<button id="pickSnubbul" onclick="pickPokemon(Snubbull)" class="chooseButton fairy hoverPick"><span id="snubbull">I choose Snubbull!</span></button>
+	<button id="pickSkorupi" onclick="pickPokemon(Skorupi)" class="chooseButton bug hoverPick"><span id="skorupi">I choose Skorupi!</span></button>
+	<button id="pickSolosis" onclick="pickPokemon(Solosis)" class="chooseButton psychic hoverPick"><span id="solosis">I choose Solosis!</span></button>
+	<button id="pickGrimer" onclick="pickPokemon(Grimer)" class="chooseButton poison hoverPick"><span id="grimer">I choose Grimer!</span></button>
+	<button id="pickMisdreavus" onclick="pickPokemon(Misdreavus)" class="chooseButton ghost hoverPick"><span id="misdreavus">I choose Misdreavus!</span></button>
+	<button id="picktogetic" onclick="pickPokemon(Togetic)" class="chooseButton flying hoverPick"><span id="togetic">I choose Togetic!</span></button>
+  </div>
+
+  <div id="battleHolder">
+    <div id="Pokemon1">
+      <p id="pokemonOneTitle"><span id="Name1">Pokemon 1</span>....HP: <span id="hp1"></span>/10</p>
+        <img src="https://cdn.bulbagarden.net/upload/8/8e/Spr_3r_000.png" id="poke1Sprite">
+      <button id="Move1-1" class="moveButton" disabled><span id="Move11Name">Move 1</span><span class="toolTip toolTipTop" id="MoveTip11">Move 1 Info</span></button>
+      <button id="Move2-1" class="moveButton" disabled><span id="Move21Name">Move 2</span><span class="toolTip toolTipTop" id="MoveTip21">Move 2 Info</span></button>
+      <button id="Move3-1" class="moveButton" disabled><span id="Move31Name">Move 3</span><span class="toolTip toolTipBottom" id="MoveTip31">Move 3 Info</span></button>
+      <button id="Move4-1" class="moveButton" disabled><span id="Move41Name">Move 4</span><span class="toolTip toolTipBottom" id="MoveTip41">Move 4 Info</span></button>
+      <h4 id="p1move">Your Move!</h4>
+	  <h6 id="statusCode1" class="status"></h6>
+    </div>
+
+    <div id="Pokemon2">
+      <p id="pokemonOneTitle"><span id="Name2">Pokemon 2</span>....HP: <span id="hp2"></span>/10</p>
+      <img src="https://cdn.bulbagarden.net/upload/8/8e/Spr_3r_000.png" id="poke2Sprite">
+      <button id="Move1-2" class="moveButton" disabled><span id="Move12Name">Move 1</span><span class="toolTip toolTipTop" id="MoveTip12">Move 1 Info</span></button>
+      <button id="Move2-2" class="moveButton" disabled><span id="Move22Name">Move 2</span><span class="toolTip toolTipTop" id="MoveTip22">Move 2 Info</span></button>
+      <button id="Move3-2" class="moveButton" disabled><span id="Move32Name">Move 3</span><span class="toolTip toolTipBottom" id="MoveTip32">Move 3 Info</span></button>
+      <button id="Move4-2" class="moveButton" disabled><span id="Move42Name">Move 4</span><span class="toolTip toolTipBottom" id="MoveTip42">Move 4 Info</span></button>
+      <h4 id="p2move">Your Move!</h4>
+	  <h6 id="statusCode2" class="status"></h6>
+    </div>
+  </div>
+  <div id="clear"></div>
+  <div id="textBox">
+    <p id="text"></p>
+  </div>
+  <div class="todo" id="accordion">
+    <p>Changes coming DURING BETA</p>
+    <div class="todo">
+        <ul>
+          <li>Background Music</li>
+          <li class="deleted"><del>Refined Styling</del></li>
+          <li>PP Counter</li>
+          <li class="deleted"><del>Shiny Pokemon</del></li>
+		  <li>Choose New Pokemon on new battle</li>
+		  <li>Add a Record of wins/losses</li>
+		  <li>Add Custom HP for better balancing</li>
+          <li class="deleted"><del>Enable Background Selector</del></li>
+          <li>Create Log In Account System</li>
+          <li>Add an AI for player 2</li>
+        </ul>
+    </div>
+  </div>
+  <p>Pokemon Battle Simulator, Beta Version by FoolHardy</p>
+  <div id="testArea">
+  <p><a href="testPage.html">Testing Space</a></p>
+  <p><a href="documentation.html">Site Update Documentation</a></p>
+  
+  </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
