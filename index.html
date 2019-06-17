@@ -4,9 +4,11 @@
 
 <head>
   <title>A Pokemon Fight!</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/misc.css">
 </head>
 
 <body>
@@ -47,7 +49,7 @@
       </div>
     </nav>
   <div id="ChooseButtons">
-  <p>Choose your Pokemon, Player <span id="whoChooses">One!</span></p>
+  <p class="chooseHeader">Choose your Pokemon, Player <span id="whoChooses">One!</span></p>
     <button id="pickBulb" class="chooseButton grass hoverPick" onclick="pickPokemon(Tangela)"><span id="tangela">I choose Tangela!</span></button>
     <button id="pickRat" onclick="pickPokemon(Rattata)" class="chooseButton normal hoverPick"><span id="rattata">I choose Rattata!</span></button>
     <button id="pickSlugma" onclick="pickPokemon(Slugma)" class="chooseButton fire hoverPick"><span id="slugma">I choose Slugma!</span></button>
@@ -69,7 +71,7 @@
   </div>
 
   <div id="battleHolder">
-    <div id="Pokemon1">
+    <div id="Pokemon1" class="turnOff">
       <p id="pokemonOneTitle"><span id="Name1">Pokemon 1</span>....HP: <span id="hp1"></span>/10</p>
         <img src="https://cdn.bulbagarden.net/upload/8/8e/Spr_3r_000.png" id="poke1Sprite">
       <button id="Move1-1" class="moveButton" disabled><span id="Move11Name">Move 1</span><span class="toolTip toolTipTop" id="MoveTip11">Move 1 Info</span></button>
@@ -80,7 +82,7 @@
 	  <h6 id="statusCode1" class="status"></h6>
     </div>
 
-    <div id="Pokemon2">
+    <div id="Pokemon2" class="turnOn">
       <p id="pokemonOneTitle"><span id="Name2">Pokemon 2</span>....HP: <span id="hp2"></span>/10</p>
       <img src="https://cdn.bulbagarden.net/upload/8/8e/Spr_3r_000.png" id="poke2Sprite">
       <button id="Move1-2" class="moveButton" disabled><span id="Move12Name">Move 1</span><span class="toolTip toolTipTop" id="MoveTip12">Move 1 Info</span></button>
@@ -92,9 +94,12 @@
     </div>
   </div>
   <div id="clear"></div>
-  <div id="textBox">
-    <p id="text"></p>
+  <div id="textBoxContainer">
+    <div id="textBox">
+      <p id="text"></p>
+    </div>
   </div>
+
   <div class="todo" id="accordion">
     <p>Changes coming DURING BETA</p>
     <div class="todo">
@@ -112,7 +117,8 @@
         </ul>
     </div>
   </div>
-  <p>Pokemon Battle Simulator, Beta Version by FoolHardy</p>
+  <p>Pokemon Battle Simulator, Beta Version by Michael Boro</p>
+  <p><a href="https://github.com/Hardytack/PokemonBattle">Git Hub Page</a></p>
   <div id="testArea">
   <p><a href="testPage.html">Testing Space</a></p>
   <p><a href="documentation.html">Site Update Documentation</a></p>

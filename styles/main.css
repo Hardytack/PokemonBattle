@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background: url('../img/background.png');
+}
+
+p {
+  text-align: center;
+}
+
+.navbar { 
+  width: 100% !important;
+}
+
+#battleHolder {
+  display: none; 
+  grid-template-columns: 1fr 1fr;
+  width: 840px;
+  margin: 0 auto;
+}
+
+#Pokemon1 {
+	background: #e2f5ff;
+}
+
+#Pokemon2 {
+	background:  #ffe4e2;
+}
+
+#Pokemon1,
+#Pokemon2 {
+  /* width: 400px; */
+  height: 650px;
+  border: 1px solid black;
+  margin: 10px;
+  /* float: left; */
+  border-radius: 2%;
+}
+
+#poke1Sprite, #poke2Sprite {
+  width: 390px;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  border: 1px solid black;
+  transition: .5s ease all;
+}
+
+.bgoption {
+    transition: .25s ease all;
+}
+
+.bgoption:hover {
+    background: #999;
+    color: white;
+}
+
+
+
+#poke1Sprite {
+    background: url("img/basic1.png"); 
+}
+
+#poke2Sprite {
+    background: url("img/basic2.png");  
+}
+
+h4, h6{
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  visibility: hidden;
+}
+
+.status {
+	display: block;
+	visibility: visible;
+}
+
+#ChooseButtons {
+  width: 80%;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: white;
+}
+
+.chooseHeader {
+  grid-column: span 3;
+}
+
+.chooseButton {
+  height: 40px;
+	border-radius: 2%;
+	border: none;
+	margin: 5px;
+	padding: 5px;
+	transition: .25s ease all;
+}
+
+/* .chooseButton {
+	width: 250px;
+	height: 40px;
+	border-radius: 2%;
+	border: none;
+	margin: 5px;
+	padding: 5px;
+	transition: .25s ease all;
+} */
+
+.chooseButton:hover {
+	box-shadow: 0 2px 4px #000000;
+}
+
+#accordion {
+  width: 500px;
+  margin: 10px auto;
+}
+
+.todo ul {
+  width: 270px;
+  margin: 0 auto;
+}
+
+#block1 {
+  float: left;
+}
+
+#block2 {
+  float: right;
+}
+
+.moveButton {
+  width: 46%;
+  border: none;
+  float: left;
+  padding: 20px;
+  margin: 2%;
+  border-radius: 5%;
+  position: relative;
+  transition: .25s ease background;
+}
+
+.moveButton:hover {
+	box-shadow: 0 2px 4px #000000;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.toolTip {
+  width: 120px;
+  background: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.toolTipTop {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  margin-bottom: 10px;
+}
+
+.toolTipBottom {
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  margin-top: 10px;
+}
+
+.moveButton:hover .toolTip {
+  opacity: 1;
+}
+
+.toolTipTop::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.toolTipBottom::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+#clear {
+  clear: both;
+}
+
+#textBox {
+  height: 200px;
+  width: auto;
+  min-width: 300px;
+  max-width: 700px;
+  margin: 10px;
+  border: 1px solid black;
+  overflow: scroll;
+  padding:  0 5px;
+  display: none;
+  background: white;
+}
+
+#text {
+  text-align: left;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  background: #ff8b60 !important;
+}
+
+.deleted {
+	text-decoration: line-through wavy black;
+}
+
+#testArea {
+	border: 1px solid black;
+    background: white;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+
+
+/*Test area styles*/
+
+.hoverPick span {    
+	transition: 0.25s;
+	position: relative;
+}
+
+.hoverPick:hover {
+	border-radius: 5%;
+}
+
+.hoverPick span:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	transition: 0.25s;
+	opacity: 0;
+	width: 40px;
+	height: 40px;
+	right: -20px;
+	top: -8px;
+}
+
+.hoverPick:hover span {
+	padding-right: 25px;
+	font-weight: bold;
+}
+
+.hoverPick:hover span:after {
+	opacity: 1;
+}
+
+.noHover {
+	pointer-events: none;
+}
+
+#textBoxContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+
+@media (max-width: 500px) {
+  #battleHolder {
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+  }
+
+  .turnOn {
+    justify-self: center;
+  }
+
+  .chooseHeader {
+    grid-column: span 1;
+  }
+
+  #ChooseButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .turnOff {
+    display: none;
+  }
+  
+  .turnOn {
+    margin: 10px auto !important;
+    float: none !important;
+  }
+}

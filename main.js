@@ -1,4 +1,6 @@
 //Variables used in Function 
+var pokeHolder1 = document.getElementById("Pokemon1");
+var pokeHolder2 = document.getElementById("Pokemon2");
 var move11 = document.getElementById("Move1-1");
 var move21 = document.getElementById("Move2-1");
 var move31 = document.getElementById("Move3-1");
@@ -340,7 +342,7 @@ function pickPokemon(poke) {
 		
 		gameText.innerHTML += "<span class='redtext'>Player Two has chosen " + poke.name +"</span><br>";
 		document.getElementById("ChooseButtons").style.display = "none";
-		document.getElementById("battleHolder").style.display = "block";
+		document.getElementById("battleHolder").style.display = "grid";
 		document.getElementById("textBox").style.display = "block";
 		turn++;
 		whoStarts();
@@ -415,6 +417,10 @@ function PlayerOneAttack() {
 	move42.disabled = false;
 	YourMove1.style.visibility = "hidden";
 	YourMove2.style.visibility = "visible";
+	pokeHolder1.classList.add("turnOff");
+	pokeHolder1.classList.remove("turnOn");
+	pokeHolder2.classList.add("turnOn");
+	pokeHolder2.classList.remove("turnOff");
 	for (var i = 0; i < P1Moves.length; i++) {
 		P1Moves[i].classList.add("noHover");
 		P2Moves[i].classList.remove("noHover");
@@ -434,6 +440,10 @@ function PlayerTwoAttack() {
 	move22.disabled = true;
 	move32.disabled = true;
 	move42.disabled = true;
+	pokeHolder1.classList.add("turnOn");
+	pokeHolder1.classList.remove("turnOff");
+	pokeHolder2.classList.add("turnOff");
+	pokeHolder2.classList.remove("turnOn");
 	YourMove2.style.visibility = "hidden";
 	YourMove1.style.visibility = "visible";
 	for (var i = 0; i < P2Moves.length; i++) {
@@ -473,7 +483,6 @@ function checkTextareaHeight(){
       textarea.scrollTop = textarea.scrollHeight;
    }
 }
-
 
 //Pokemon Moves
 function aquaRing() {
@@ -3798,8 +3807,8 @@ var plaza = {
 };
 
 var redCarpet = {
-	p1: "url('img/RedCarpet1.png')",
-	p2: "url('img/RedCarpet2.png')"
+	p1: "url('img/redCarpet1.png')",
+	p2: "url('img/redCarpet2.png')"
 };
 
 var snow = {
