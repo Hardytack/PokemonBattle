@@ -1,4 +1,4 @@
-//Variables used in Function 
+// Variables used in Function created here
 var pokeHolder1 = document.getElementById("Pokemon1");
 var pokeHolder2 = document.getElementById("Pokemon2");
 var move11 = document.getElementById("Move1-1");
